@@ -1,0 +1,137 @@
+
+
+def destination(des_city)
+    begin
+        puts "How many days of holiday are you planning?"
+                days=gets.chomp.to_i
+        
+        if des_city=="Sydney"   
+                if days<=1 
+                    return "Consider climbing Sydney Harbour Bridge, Try surfing in Bondi or Try Thunder Jet Boat"
+
+                end
+
+                if days>1 && days<=3 
+                    return "Climb Sydney Harbour Bridge, Surf in Bondi, Ride Thunder Jet Boat, Wakeboarding in Hawkesbury River,\n Hot Air Balloon in Hunter Valley"
+
+                end
+
+                if days>3 && days <=7 
+                        return "Climb Sydney Harbour Bridge, Surf in Bondi, Ride Thunder Jet Boat, Wakeboarding in Hawkesbury River, \n Hot Air Balloon in Hunter Valley, Kayaking around Middle Harbour, Battle rapids in Penrith Whitewater Stadium, \n Bluemountains Wildlife Tour and Hiking"
+
+                end
+
+                if days>7
+                    return "Please phone @ 0415830670 for tailor-made adventure tours at great discount"
+
+                end
+        end
+            
+    if des_city=="Melbourne"
+        
+        if days<=1
+            return "Ride free CityCircle Train; Visit St. Pauls Cathedra, Parliament House and Royal Exhibition building; 
+            Visit CityCentre laneways and try exotic food and drinks."
+
+        end
+
+        if days>1 && days<=3
+            return "Ride free CityCircle Train; Visit St. Pauls Cathedra, Parliament House and Royal Exhibition building; 
+            Visit CityCentre laneways and try exotic food and drinks; Visit Australia's oldest gallery-National Gallery of Victoria; 
+            visit St. Kilda and South Yarra; Enjoy cruise in Yarra River; Visit Mornington Peninsula; Go for Millionair's Walk; 
+            Visit Peninsula Hot Springs"
+
+        end
+
+        if days>3 && days <=7
+                return "Ride free CityCircle Train; Visit St. Pauls Cathedra, Parliament House and Royal Exhibition building; 
+                Visit CityCentre laneways and try exotic food and drinks; Visit Australia's oldest gallery-National Gallery of Victoria; 
+                visit St. Kilda and South Yarra; Enjoy cruise in Yarra River; Visit Mornington Peninsula; 
+                Go for Millionair's Walk; Visit Peninsula Hot Springs, Visit Queen Victoria Markets, South Melbourne Market, 
+                and Rose St. Artists Market"
+
+        end
+
+        if days>7
+            return "Please phone @ 0415830670 for tailor-made adventure tours at great discount"
+
+        end
+        
+    end
+        
+    if des_city=="Brisbane"
+        if days<=1
+            return "Go for a river cruise on Brisbane river; Visit the beautiful parks and street beach in South Bank; Visit Wivenhoe lake "
+
+        end
+
+        if days>1 && days<=3
+            return "Climb famous Story Bridge and abseil down it; Enjoy Brisbane RIver Cruises; Visit Moreton Islands or Stradbroke Islands; 
+            Visit Theme parks of Goldcoast; Visit famous beaches of Goldcoast"
+
+        end
+
+        if days>3 && days <=7
+                return "Go for a river cruise on Brisbane river; Visit the beautiful parks and street beach in South Bank; 
+                Visit Wivenhoe lake; Climb famous Story Bridge and abseil down it; Visit Moreton Islands or Stradbroke Islands; 
+                Visit Theme parks of Goldcoast; Visit famous beaches of Goldcoast; Visit Sunshine Coast and Australia Zoo"
+
+        end
+
+        if days>7
+            return "Please phone @ 0415830670 for tailor-made adventure tours at great discount"
+
+        end
+        
+    end
+rescue 
+    puts "Please try another time."  
+end
+end
+i=0
+places={
+            Sydney: "Adventure",
+            Melbourne: "Art_Music_Culture",
+            Brisbane: "Beaches_and_Islands",
+        }
+i=0
+
+while i==0
+
+
+    puts "Please choose the most important holiday activity for you from the list:\n Adventure \n Art_Music_Culture \n Beaches_and_Islands"
+    input1=gets.chomp.to_s
+
+
+    places.each do |key, value|
+        
+        
+
+        if input1==value
+        
+            puts"your recommended holiday is in #{key}"
+            
+            city=key.to_s
+            if city=="Sydney"
+                puts destination("Sydney")
+            end
+            if city=="Melbourne"
+                puts destination("Melbourne")
+            end
+            if city=="Brisbane"
+                puts destination("Brisbane")
+            end
+
+
+            i=1    
+            break
+        end
+
+    end
+        if i==1
+            break
+        end
+        puts "Invalid choice."
+end
+
+
