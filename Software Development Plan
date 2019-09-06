@@ -1,0 +1,124 @@
+
+Statement of Purpose and Scope
+The purpose of this application is to suggest people possible holiday destination based on their interest. It will also provide them 
+further recommendations in those destinations based on the length of their holiday. The application has a database of destinations along 
+with the activities they are famous for. Each destination is linked with one activity and the database is saved in a hash. The application
+gives the users options regarding activities they are interested in. When the user chooses an activity, the application recommends linked 
+destination to the user as a place for possible holiday. The application further asks the user to choose the length of their possible 
+holiday. When the user inputs the number of days of their possible holiday, the application recommends possible activities in their 
+possible destination. The application classifies the holiday length into four categories viz. single day, up to three days, four days to 
+seven days and more than seven days. 
+
+Though, the application currently provides option for selecting only one activity of interest and recommends only one destination, the 
+application can be updated to let users choose multiple activities and get multiple destination recommendations. The options provided and 
+the destinations suggested are based on the information available on the website of “Tourism Australia. 
+
+Many people find it hard to decide about their next holiday destination and there is a dearth of websites that recommend destinations 
+based on user interest. The target audience for this application are all the people struggling to decide which place to go during their 
+next holiday. It can also be used by people who want to get an idea about holiday activities.The activity recommendation based on user 
+choice of activities provides further guidance to users who are struggling to make a decision. Another reason for the development of this 
+application is to fulfill the requirements of the Term 1 of Diploma of Information Technology in Coder Academy.
+
+
+Features
+The application has a number of features that are listed as follows:
+1) Provide options to the users about a range of activities that they might be interested in: The application lists the available options and instructs the user to type an activity they might be interested in. If the input made by the user is not on the list, then it displays a message saying that the user’s choice has been invalid and prompts the user to input an activity again. 
+
+2) Display recommended destination: After receiving a valid input from the user, the application displays the recommended destination on the screen based on user’s interest. A loop is used to check the user input against activities associated with places in the hash.
+
+3) Length of potential holiday and further recommendations: The application then prompts to provide input about the length of their potential holiday. If the input provided by the user is less than one or is a string a message will be displayed saying “Invalid Entry” and prompts the user to try again. After getting valid input about the length of the holiday the application generates output recommending activities for the holiday.
+ If there is an error in user input, comparison operators have been used to check if there is an error or not. If there is an error in the program the second part (the part that recommends activities based on the holiday length) of the program will be aborted and a message will be displayed to the user to try later.
+ 
+ 
+User Interaction and Experience
+This application has been carefully coded and revised extensively to minimize user frustration. Following paragraphs explain how the users interact with the application.
+
+1) Welcome message and user input: The users will get a welcome message along with the instruction to choose an activity they are interested in from the list of activities printed on the screen. The users are instructed to type their choice on the terminal. 
+2) Error Message: If the user types an activity not listed on the screen, an error message will be displayed prompting the user to provide the input again.
+3) Destination recommendation and length of holiday: When the user provides a correct input, the recommended holiday destination is displayed on the screen. It then prompts the user to input the length of the potential holiday expressed as number of days. 
+4) Activities recommendation: The application then asks the user about the length of the holiday. When the user inputs the length of the holidays as number of days, the application generates output recommending the activities suitable to the length of the holiday and user interest. If the user inputs a number less than 1 or a string, an “Invalid entry” message is displayed and prompts the user to input the holiday length again. 
+5) If there is an error during the execution of the method, a “begin, rescue, end” block has been added that displays the message “Please try another time” to the user and terminates the application.
+
+
+
+Control Flow Diagram
+
+Control Flow Diagram will be submitted in a separate PDF file.
+
+
+
+Provide options to users about activities they might be interested in: To accomplish this feature, a hash will be created that will contain the names of the destinations as keys and the activity they are famous for as value. The website of “Tourism Australia” will be used as a source of information for linking destinations with activities. A “.each” loop will be used to  print the list of activities on the screen, so that the users can view what activities they can select from. For a start, only three destinations will be included in the hash so that the second part of the application that generates recommendations for further activities can be completed in time. 
+A variable named “input1” will be used to used to record user input for the choice of their activity. 
+A ruby gem named “colorize” will be used to to provide different colours to the output. The instructions and error messages will be displayed in red font.
+
+Display recommended destination: This variable input1 will be compared against the activities in the hash. A “.each” loop will be used for it along with comparison operator “==” to provide recommended destination. This recommendation will be printed in red fonts. This loop will also be used to initiate a method “destination” that will be used later to recommend further activities to the user. 
+A variable “i” with a value of zero will be used for using it in a while loop. Both the “.each” loops will be nested inside the while loop. The purpose of while loop is to return message to the users that their input has not been valid in case of wrong input from the users.
+
+Length of potential holiday and further recommendations: A method with the name “destination” will be used to accomplish this purpose. The method is called inside the “.each” loop as explained above. A new variable “city” will be created which will be set equal to the destination recommended above. Then, “if” statements will be used to check if city is equal to the recommended destination. Each of the “if” statements will have a line for calling the  method with the destination name as the argument. Whichever “if” condition gets fulfilled calls the method. The recommendations for each destination will be displayed in different colours using the gem “colorize”.
+The method starts with taking user input about the length of the holiday. The input will be taken as an integer. If the user input is less than one, a message will be displayed that the input has been invalid. “If” condition will be used for it. Then, a series of if conditions will be used to identify the destination previously suggested to the user and to provide a recommendation based on the length of the potential holiday.
+A “begin, rescue, end” block will be incorporated in the method so that if there is any problem with the execution of the method, a message will be printed on the screen in red fonts using the gem “colorize” that tells the user to use the application later.
+
+Implementation Plan
+
+Feature 1
+
+[ ]Define a hash with potential destinations as keys and activities associated with the destinations as values (3)
+[ ] Provide option to users about the activities they might be interested in (2)
+[ ] Use “.each” loop on the hash for displaying the options (3)
+[ ] Get input from the users for their choice of activity (2)
+[ ] Convert the user’s input into a string (2)
+
+Feature 2
+
+[ ] Use a “.each” loop to match the user’s input with the values of one of the destinations (3)
+[ ] Display recommended destination (3)
+[ ] Use a while to return an error message to the user if they provide wrong input(2)
+[ ] Use a variable “city” equal to the recommended destination. Use “if” condition to call the method “destination”
+[ ] Call the method  with the holiday destination as an argument (2)
+
+Feature 3
+
+[ ] Define the method “destination” with one parameter (2)
+[ ] Display message to the user to input the length of the holiday (1)
+[ ] Get input from the user (2)
+[ ] Use a while loop to check if the user input is valid or not and to display error message if invalid (2)
+[ ] Use “if” conditions to determine which set of further recommendations are suitable for the user (2)
+[ ] Use more “if” conditions to recommend further activities to the user (3)
+
+Priority key = (1) Low (2) Medium (3) High
+
+
+Status Updates
+
+Status Update 1 (3 September 2019, 3 p.m.): I was  originally planning to write an application that would provide holiday destination recommendation to the users based on their activity of interest. However, after carefully considering all the factors, I decided that the application code would be too short and might lack many features of Ruby. After pondering upon what feature would  add most value to the application, I thought that providing further recommendations to the users based on the length of their potential holiday would be the best. To successfully add this new feature I had to cut a few features from the original application. The original application took multiple inputs from the users about the activities of their interest. Based on these activities the application could suggest one or more destinations. Retaining these features on the new application would significantly increase the need for information to make the application uptodate. Hence, the first part of the application was pared down to get only one input about user’s choice of activity and the application would suggest only one destination to the user. 
+
+Status Update 2 (4 September 2019, 3:30 p.m.): When coding for the application was finished, I realised that there was no robust error handling mechanism in the application. After carefully considering all the options, I decided that the best way to address this challenge was to us a “begin-rescue-end” block in the method part of the code. If there was any error that prevented the execution of the method block, a message will be displayed to the users that would say try again later.
+
+Help
+
+How to use the application?
+The easiest way to use the application is to follow the instructions displayed on the screen. The user has to provide two inputs during the execution of the application. The first input should be provided exactly as the options are listed on the screen. The user has to type in the activity as it displays on the screen including matching the letters in uppercase and lowercase. In case of a mistaken input, the user gets multiple opportunities to correct it.  The second input  should be an integer. The user gets multiple opportunities to provide input if necessary. If the user inputs a float it will be converted into an integer by ignoring the digits after the decimal.
+ 
+System Requirements
+
+Operating System - Windows 95 or later, Mac OS X 10 or later
+Processor Speed - Pentium 4, 3.2 GHz or Power PC G5, 2.0 GHz
+Memory - At least 512Mb
+Graphics Card - ATI Radeon 9800 w/ 256 MB video memory
+Hard Disk Space - At least 1GB
+Internet connection
+
+Test Application
+
+Two tests have been designed to Check if the application runs as expected.  In the first test, while providing the first input,  a wrong input is provided deliberately to check if the application generates   correct error message. Then the first option  from the list is  chosen to input. When providing the second input,  a wrong input is deliberately   entered  to check if an error message is displayed  then 1 is provided as an input into the application.
+
+In the second test, Wrong input is again provided for the first input to check if correct error message is displayed.  then turned up sand from the list in chosen to input. when providing the second input a wrong input is deliberately entered to check if correct error message is displayed.  Then 7 is provided as an input.
+
+ During both the tests, it was found that the application produced results that were consistent with the expectation. 
+ 
+
+
+
+
+
+
